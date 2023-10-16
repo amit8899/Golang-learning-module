@@ -34,6 +34,10 @@ func main() {
 
 	sort.Ints(highScores)
 
+	// deleting element at given index
+	highScores = deleteElement(highScores, 4)
+	fmt.Println(highScores)
+
 	fmt.Println(highScores)
 
 	fmt.Println(sort.IntsAreSorted(highScores))
@@ -46,3 +50,26 @@ func main() {
 func printSlice(x []int) {
 	fmt.Printf("len = %d cap = %d slice = %v\n", len(x), cap(x), x)
 }
+
+// delete single element
+func deleteElement(slice []int, index int) []int {
+	return append(slice[:index], slice[index+1:]...)
+}
+
+// delete multiple elements
+func deleteElements(slice []int, indices []int) []int {
+	// Sort indices in descending order
+	sort.Sort(sort.Reverse(sort.IntSlice(indices)))
+
+	for _, index := range indices {
+		slice = append(slice[:index], slice[index+1:]...)
+	}
+
+	return slice
+}
+
+// The ... operator after slice[3:] is used to spread the
+// elements in the slice. This means that instead of appending
+// a slice to slice[:1], we append each individual element of
+// slice[3:] to slice[:1]. This effectively removes the elements
+// at index 1 and 2.
