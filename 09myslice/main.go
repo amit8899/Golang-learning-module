@@ -8,6 +8,13 @@ import (
 	"sort"
 )
 
+type User struct {
+	Name   string
+	Email  string
+	Status bool
+	Age    int
+}
+
 func main() {
 	var fruitList = []string{"Apple", "Tomato", "Peach"}
 	fmt.Printf("Type of fruitList is %T\n", fruitList)
@@ -44,6 +51,12 @@ func main() {
 
 	numbers1 := make([]int, 0, 5) //0 is len , 5 is cap
 	printSlice(numbers1)
+
+	structSlice := []User{
+		{Name: "Amit", Email: "mail", Status: true, Age: 56},
+		{Name: "Dev", Email: "mail", Status: true, Age: 54},
+	}
+	fmt.Println("slice of struct:", structSlice)
 
 }
 
