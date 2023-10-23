@@ -39,4 +39,5 @@ func Sqrt(value float64) (float64, error) {
 		return 0, errors.New("Math: negative number passed to Sqrt")
 	}
 	return math.Sqrt(value), nil
+
 }

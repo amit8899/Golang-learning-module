@@ -5,6 +5,11 @@ import (
 	"fmt"
 )
 
+/*
+Use json.Decoder if your data is coming from an io.Reader stream, or you need to decode multiple values from a stream of data.
+Use json.Unmarshal if you already have the JSON data in memory.
+*/
+
 type User struct {
 	Name  string
 	Email string
