@@ -17,3 +17,15 @@ func TestAbs(t *testing.T) {
 		t.Error("Negative value found in abs() with", -1)
 	}
 }
+
+func BenchmarkAdd(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		Add(4, 6)
+	}
+}
+
+func BenchmarkAbs(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		Abs(-1)
+	}
+}
