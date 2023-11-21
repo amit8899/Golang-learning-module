@@ -10,6 +10,7 @@ func main() {
 	// log.Println("error")
 	log.SetFlags(log.Ldate | log.Lshortfile)
 	log.Println("Sup ninjas!")
+	log.SetL
 
 	// log.Panic("Panicking...")
 	// log.Fatal("Uh-oh...")
